@@ -45,13 +45,17 @@
 
 - (void)addTitleView
 {
-    JTTitleView *titleView = [[JTTitleView alloc] initWithFrame:CGRectMake(0, 64, [UIScreen mainScreen].bounds.size.width, 44) TitleChangeStyle:TitleChangeStyleBottomLine2];
-//    titleView.titles = self.titleArray;
+    JTTitleView *titleView = [[JTTitleView alloc] initWithFrame:CGRectMake(0, 64, [UIScreen mainScreen].bounds.size.width, 44) TitleChangeStyle:TitleChangeStyleBottomLine1];
+    
     titleView.backColor = [UIColor whiteColor];
     titleView.normalColor = [UIColor blackColor];
     titleView.selectColor = [UIColor orangeColor];
-    titleView.titles = @[@"小学",@"中学"];
-    titleView.titles = @[@"小学",@"初中",@"高中"];
+    // 使用的时候  最后设置标题数组
+    titleView.titles = self.titleArray;
+    
+    // 支持刷新标题
+//    titleView.titles = @[@"小学",@"中学"];
+//    titleView.titles = @[@"小学",@"初中",@"高中"];
     titleView.delegate = self;
     
     [self.view addSubview:titleView];
